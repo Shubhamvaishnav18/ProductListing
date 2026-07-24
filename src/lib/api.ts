@@ -1,13 +1,20 @@
 import { Product } from "../types";
+import { fallbackProducts } from "./data";
 
 export async function fetchProducts(): Promise<Product[]> {
-  const res = await fetch("https://fakestoreapi.com/products", {
-    next: { revalidate: 3600 }, 
-  });
+  try {
+    const res = await fetch("https://fakesoreapi.com/products", {
+      next: { revalidate: 3600 },
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
+    if (!res.ok) {
+      console.warn("API failed. Falling back to local data.");
+      return fallbackProducts;
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("Network error fetching products. Falling back to local data.", error);
+    return fallbackProducts;
   }
-
-  return res.json();
 }
