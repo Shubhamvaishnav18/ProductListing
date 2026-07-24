@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product Listing Application
 
-## Getting Started
+A responsive product listing page built with Next.js (App Router), React, TypeScript, and Tailwind CSS. This project fetches and displays data from the public Fake Store API, featuring client-side filtering, responsive grid layouts, and polished error/loading state handling.
 
-First, run the development server:
+## 🚀 Getting Started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Follow these instructions to set up and run the project locally on your machine.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Prerequisites
+- Node.js (v18.17 or higher recommended)
+- npm, yarn, pnpm, or bun
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation & Execution
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository** (or navigate to the extracted project folder):
+   ```bash
+   git clone <your-repository-url>
+   cd <project-folder-name>
 
-## Learn More
+2. Install dependencies:
+   ```bash
+   npm install
 
-To learn more about Next.js, take a look at the following resources:
+3. Run the development server:
+   ```bash
+   npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open the application:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Navigate to http://localhost:3000 in your browser to view the project.
 
-## Deploy on Vercel
+## 🛠️ What I Would Improve With More Time
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Custom Backend Architecture: I would transition away from the mock public API and integrate a dedicated backend service (such as Node.js with a database like MongoDB) to handle server-side pagination, robust search algorithms, and structured data models.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+UI/UX & Visual Polish: I would refine the loading states by implementing highly accurate skeleton loaders that match the exact dimensions of the cards, ensuring a completely pixel-perfect visual transition before the data loads.
+
+Advanced Filtering & Performance: I would add a custom useDebounce hook to the search input to optimize rendering performance, alongside additional filtering options (like sorting by price or category).
